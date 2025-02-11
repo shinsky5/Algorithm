@@ -7,20 +7,29 @@ public class Q3052 {
         Scanner sc = new Scanner(System.in);
 
         int[] arr = new int[10];
-        Map<Integer,Integer> rst = new HashMap<>();
 
         for (int i = 0; i < arr.length; i++) {
             int a = sc.nextInt();
             arr[i] = a%42;
         }
 
-        Arrays.sort(arr);
-
-        for (int i : arr) {
-            System.out.print(i+" ");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if ((i>j)) {
+                    if (arr[i] == arr[j]) {
+                        arr[j] = 42;
+                    }
+                }
+            }
         }
 
-
+        int cnt = 0;
+        for (int i : arr) {
+            if (i != 42) {
+                cnt++;
+            }
+        }
+        System.out.println(cnt);
 
     }
 }
