@@ -1,15 +1,13 @@
 package org.example.Lv.Lv11;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Q2426 {
+public class Q24266 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        long n = sc.nextLong();
 
-        System.out.println(1);
-        System.out.println(0);
-
+        System.out.println(n * n * n);
+        System.out.println(3);
     }
 }

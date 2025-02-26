@@ -11,13 +11,6 @@ public class Q1193 {
             }
         }
 
-        for (int i = 0; i < brr.length; i++) {
-            if(i%2==0){
-                brr[i] = (i+1)+(5*i);
-            }else{
-                brr[i]=((i+1)*i)+(5+(4*i));
-            }
-        }
 
         for (String[] i : arr) {
             for (String j : i) {

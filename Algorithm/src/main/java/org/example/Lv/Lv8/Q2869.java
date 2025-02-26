@@ -1,18 +1,18 @@
 package org.example.Lv.Lv8;
 
-import java.util.Scanner;
+import java.io.*;
 
 public class Q2869 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String[] srr = br.readLine().split(" ");
+        int a = Integer.parseInt(srr[0]);
+        int b = Integer.parseInt(srr[1]);
+        int v = Integer.parseInt(srr[2]);
 
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int v = sc.nextInt();
-
-        int ans =0;
-        int cnt = 0;
-
-        System.out.println(cnt);
+        int day = (v - a) / (a - b)+1;
+        bw.write(String.valueOf(day));
+        bw.flush();
     }
 }

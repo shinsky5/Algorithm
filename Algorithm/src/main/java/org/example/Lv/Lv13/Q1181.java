@@ -19,9 +19,5 @@ public class Q1181 {
         for (int i = 0; i < n; i++) {
             set.add(sc.nextLine());
         }
-
-
-
-
     }
 }

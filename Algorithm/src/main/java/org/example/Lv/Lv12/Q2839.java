@@ -6,20 +6,20 @@ public class Q2839 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+        int rst = 0;
 
-        int f_rst = n/5;
-        int f_d = n%5;
-        int t_rst = n/3;
-        int t_d = n%3;
-
-        if (f_d % 3 == 0) {
-            System.out.println(f_rst + (f_d/3));
-        } else if (t_d == 0) {
-            System.out.println(t_rst);
-        }else{
-            System.out.println("-1");
+        for (int i = 0; i <= 1000; i++) {
+            for (int j = 0; j <= 1666; j++) {
+                int sum = 5*i + 3*j;
+                if (sum == n) {
+                    rst = i+j;
+                }
+            }
         }
-
-
+        if (rst != 0) {
+            System.out.println(rst);
+        }else{
+            System.out.println(-1);
+        }
     }
 }

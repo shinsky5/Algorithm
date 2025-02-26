@@ -11,7 +11,7 @@ public class Q1018 {
         sc.nextLine();
 
         String[][] arr = new String[a][b];
-        String[][] brr = new String[8][8];
+        String[][] brr = new String[2][2];
 
         for (int i = 0; i < arr.length; i++) {
             String str = sc.nextLine();
@@ -19,18 +19,22 @@ public class Q1018 {
         }
 
 
-        for (int i = 0; i < brr.length; i++) {
-            for (int j = 0; j < brr.length; j++) {
-                brr[i][j] = arr[i][j];
-            }
-        }
 
+
+//        for (int i = 0; i < brr.length; i++) {
+//            for (int j = 0; j < brr.length; j++) {
+//                brr[i][j] = arr[i][j];
+//            }
+//        }
+//
         for (String[] i : brr) {
             for (String j : i) {
                 System.out.print(j+" ");
             }
             System.out.println();
         }
+//
+//        int rst = getCnt(brr);
     }
 
     public static int getCnt(String[][] arr) {
@@ -51,7 +55,6 @@ public class Q1018 {
                 }
             }
         }
-        System.out.println(cnt);
         return cnt;
     }
 }
