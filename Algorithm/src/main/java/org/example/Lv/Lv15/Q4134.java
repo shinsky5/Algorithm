@@ -1,15 +1,20 @@
-package org.example.Lv.Lv14;
+package org.example.Lv.Lv15;
 
 import java.io.*;
 
-public class Q11478 {
+public class Q4134 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        String str = br.readLine();
-        String[] srr = str.split("");
+        int n = Integer.parseInt(br.readLine());
+        int a = 0;
+        for (int i = 0; i < n; i++) {
+            a = Integer.parseInt(br.readLine());
 
 
+
+
+        }
     }
 }
