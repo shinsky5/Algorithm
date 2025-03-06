@@ -1,23 +1,33 @@
 package org.example.Lv.Lv13;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.stream.Stream;
 
+import java.util.*;
+
+class Info {
+    int leng;
+    String str;
+
+    public Info(int leng, String str) {
+        this.leng = leng;
+        this.str = str;
+    }
+}
 public class Q1181 {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         sc.nextLine();
-
-        Set<String> set = new HashSet<>();
+        Info[] srr = new Info[n];
 
         for (int i = 0; i < n; i++) {
-            set.add(sc.nextLine());
+            String str = sc.nextLine();
+            srr[i] = new Info(str.length(), str);
+        }
+
+
+        for (Info i : srr) {
+            System.out.println(i.leng+" "+i.str);
         }
     }
 }

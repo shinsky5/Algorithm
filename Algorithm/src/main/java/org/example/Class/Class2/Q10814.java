@@ -2,22 +2,36 @@ package org.example.Class.Class2;
 
 import java.util.*;
 
+class Member {
+    int age;
+    String name;
+    int order;
+
+    public Member(int age, String name,int order) {
+        this.age = age;
+        this.name = name;
+        this.order = order;
+    }
+}
+
 public class Q10814 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         int a = sc.nextInt();
         sc.nextLine();
-        String[] srr = new String[a];
-        HashMap<Integer, String> map = new HashMap<>();
+        List<Member> list = new ArrayList<>();
+
         for (int i = 0; i < a; i++) {
-            srr[i] = sc.nextLine();
-            map.put(i, srr[i]);
+            int age = sc.nextInt();
+            String name = sc.next();
+            list.add(new Member(age, name,i));
         }
 
-        Arrays.sort(srr);
-        System.out.println(Arrays.toString(srr));
-        System.out.println(map.toString());
+        list.sort(Comparator.comparingInt((Member member) -> member.age).thenComparingInt((Member member) -> member.order));
 
-
+        for (Member m : list) {
+            System.out.println(m.age+" "+m.name);
+        }
     }
 }
