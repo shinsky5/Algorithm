@@ -1,46 +1,57 @@
 package org.example.Class.Class2;
 
-import java.awt.image.ImageProducer;
 import java.util.*;
+class Print {
+    int num;
+    int idx;
 
+    public Print(int idx, int num) {
+        this.idx = idx;
+        this.num = num;
+    }
+}
 public class Q1966 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        sc.nextLine();
-        int a = 0;
-        int b= 0;
-        LinkedList<HashMap<Integer, Integer>> list = new LinkedList<>();
-        while (n > 0) {
-            a = sc.nextInt();
-            b = sc.nextInt();
+        int all = sc.nextInt();
+        for (int i = 0; i < all; i++) {
+            int n = sc.nextInt();
+            int m = sc.nextInt();
             sc.nextLine();
+            LinkedList<Print> list = new LinkedList<>();
 
-            for (int i = 0; i < a; i++) {
-                HashMap<Integer, Integer> map = new HashMap<>();
-                map.put(i,sc.nextInt());
-                list.add(map);
+            int max = 0;
+            for (int j = 0; j < n; j++) {
+                list.add(new Print(j,sc.nextInt()));
             }
+            Print rst;
+            int rst_cnt = 0;
+            do {
+                rst = order(list);
+                rst_cnt++;
+            } while (rst.idx != m);
+            System.out.println(rst_cnt);
+        }
+    }
+
+    public static Print order(LinkedList<Print> list) {
             int max = 0;
             for (int i = 0; i < list.size(); i++) {
-                if (list.get(i).get(i) > max) {
-                    max = list.get(i).get(i);
+                if (list.get(i).num > max) {
+                    max = list.get(i).num;
                 }
             }
-            HashMap<Integer, Integer> tmp = new HashMap<>();
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i).get(i) < max) {
+            Print tmp;
+            Print rst;
+            while (true) {
+                if (list.get(0).num < max) {
                     tmp = list.poll();
                     list.addLast(tmp);
+                } else if (list.get(0).num == max) {
+                    rst = list.poll();
+                    break;
                 }
             }
-
-            System.out.println(list.toString());
-
-
-
-            n--;
+            return rst;
         }
-
     }
-}
